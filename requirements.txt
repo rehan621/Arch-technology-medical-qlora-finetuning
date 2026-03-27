@@ -1,0 +1,66 @@
+# ============================================================
+# Medical QLoRA Fine-Tuning — Requirements
+# Platform: Google Colab (Python 3.12, CUDA 12.8, T4 GPU)
+# ============================================================
+
+# ── Core Fine-Tuning Framework ───────────────────────────────
+# Unsloth: 2x faster fine-tuning with custom CUDA kernels
+# Install with: pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+unsloth
+
+# ── HuggingFace Ecosystem ────────────────────────────────────
+transformers>=4.40.0
+datasets>=2.18.0
+huggingface_hub>=0.22.0
+tokenizers>=0.19.0
+accelerate>=0.29.0
+safetensors>=0.4.0
+
+# ── PEFT (Parameter Efficient Fine-Tuning) ───────────────────
+peft>=0.10.0
+
+# ── Training Library ─────────────────────────────────────────
+trl>=0.8.0
+
+# ── Quantization (4-bit QLoRA) ───────────────────────────────
+bitsandbytes>=0.43.0
+
+# ── Deep Learning Core ───────────────────────────────────────
+torch>=2.2.0
+torchvision
+torchaudio
+
+# ── Utilities ────────────────────────────────────────────────
+numpy>=1.26.0
+scipy>=1.12.0
+scikit-learn>=1.4.0
+pandas>=2.2.0
+tqdm>=4.66.0
+
+# ── Colab / Jupyter ──────────────────────────────────────────
+ipywidgets>=8.1.0
+ipython>=8.22.0
+
+# ============================================================
+# HOW TO INSTALL IN GOOGLE COLAB:
+#
+# Cell 1 — Run this:
+#
+# !pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+# !pip install --no-deps trl peft accelerate bitsandbytes
+# !pip install datasets huggingface_hub
+#
+# NOTE: Do NOT run "pip install -r requirements.txt" directly
+# in Colab — use the Cell 1 commands above for correct setup.
+# ============================================================
+
+# ── Tested Environment ───────────────────────────────────────
+# Python        : 3.12
+# CUDA          : 12.8
+# cuDNN         : 7.5
+# Torch         : 2.10.0+cu128
+# Unsloth       : 2026.3.15
+# Transformers  : 5.3.0
+# GPU           : Tesla T4 (14.6 GB VRAM)
+# OS            : Linux (Google Colab)
+# ============================================================
